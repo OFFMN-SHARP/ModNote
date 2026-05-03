@@ -29,7 +29,7 @@ namespace ModNote
                 File.Create("List.json").Close();
             }
             string json = File.ReadAllText("List.json");
-            if (string.IsNullOrEmpty(json) || json.Length < 10) json = "[{\"Model\":\"Note\",\"Content\":\"Content1\"},{\"Model\":\"Note\",\"Content\":\"Content2\"}]";
+            if (string.IsNullOrEmpty(json) || json.Length < 10) json = "[{\"Model\":\"\",\"Content\":\"\"}]";
             //[{"Model":"Note","Content":"Content1"},{"Model":"Note","Content":"Content2"}]
             var list = JsonDocument.Parse(json).RootElement.EnumerateArray();
             foreach (var item in list)
